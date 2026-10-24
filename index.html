@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Uva Sri | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <a href="#home" class="logo">Uva Sri ✦</a>
+  <nav>
+    <a href="#home" class="active">⌂ Home</a>
+    <a href="#about">♡ About Me</a>
+    <a href="#skills">✦ Skills</a>
+    <a href="#hobbies">☺ Hobbies &amp; Interests</a>
+    <a href="#projects">▣ Projects</a>
+    <a href="#contact">✉ Contact</a>
+  </nav>
+</header>
+
+<!-- HOME -->+
+<main class="hero" id="home">
+  <div class="photo-wrap">
+    <span class="spark s1">✦</span>
+    <span class="spark s2">✧</span>
+    <span class="spark s3">✦</span>
+    <!-- Put your photo at images/photo.jpg -->
+    <img class="photo" src="photo.jpg.jpeg" alt="Uva Sri"
+         onerror="this.outerHTML='<div class=&quot;photo&quot;>US</div>'">
+    <div class="tagline">curious mind · creative soul</div>
+  </div>
+
+  <div>
+    <div class="eyebrow">Welcome to my world</div>
+    <h1>Hello, I'm<br><span>Uva Sri</span></h1>
+    <p>I'm Uva Sri. I enjoy exploring ideas, learning programming and web technologies, and creating projects that turn useful ideas into something practical. This portfolio shares my skills, interests, and learning journey.</p>
+    <div class="btns">
+      <a class="btn primary" href="#projects">Explore my projects ↗</a>
+      <a class="btn ghost" href="#about">Get to know me</a>
+    </div>
+  </div>
+</main>
+
+<!-- EXPLORE -->
+<section id="explore">
+  <div class="eyebrow">Explore</div>
+  <h2>Different interests, one curious mind</h2>
+  <div class="grid">
+    <a class="card" href="#about"><div class="icon">♡</div><h3>About Me</h3><p>Who I am and what drives me.</p></a>
+    <a class="card" href="#skills"><div class="icon">✦</div><h3>Skills</h3><p>What I'm learning and building with.</p></a>
+    <a class="card" href="#hobbies"><div class="icon">☺</div><h3>Hobbies</h3><p>What I love outside of code.</p></a>
+    <a class="card" href="analyzer.html"><div class="icon">▣</div><h3>Text Analyzer</h3><p>Try my JavaScript project live.</p></a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about">
+  <div class="eyebrow">About me</div>
+  <h2>A little about Uva Sri</h2>
+  <p>I'm a student who loves learning how the web works. I like turning small ideas into working projects, and I'm always curious about how things can be made simpler and more useful.</p>
+  <p>Right now I'm focused on strengthening my JavaScript fundamentals by building real projects, like the Text Analyzer &amp; Formatter featured below.</p>
+</section>
+
+<!-- SKILLS -->
+<!-- SKILLS -->
+    <section id="skills">
+        <div class="section-content">
+            <h2>My Skills</h2>
+            <div class="card-row">
+                <div class="skill-card">
+                    <h3>Python</h3>
+                    <p>Programming Fundamentals</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Java</h3>
+                    <p>Object-Oriented Programming</p>
+                </div>
+                <div class="skill-card">
+                    <h3>JavaScript</h3>
+                    <p>Web Interactivity</p>
+                </div>
+                <div class="skill-card">
+                    <h3>HTML</h3>
+                    <p>Web Page Structure</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- HOBBIES -->
+<section id="hobbies">
+  <div class="eyebrow">Hobbies &amp; Interests</div>
+  <h2>Beyond the screen</h2>
+  <div class="chips">
+    <span class="chip">📚 Reading</span>
+    <span class="chip">🎨 Creative design</span>
+    <span class="chip">🎵 Music</span>
+    <span class="chip">💻 Exploring new tech</span>
+    <span class="chip">✍️ Writing</span>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="eyebrow">Projects</div>
+  <h2>Digital Document Record Management System</h2>
+  <div class="grid">
+    <a class="card" href="https://github.com/uvasri367-dot/digital-document-">
+      <div class="icon">📝</div>
+      <h3> &amp; </h3>
+      <p>The Digital Document Record Management System is a Java-based application used to store, manage, search, and delete document records digitally. It reduces paperwork and makes document management simple, fast, and organized</p>
+      <p style="margin-top:12px;color:var(--accent-dark);font-weight:600">Open project ↗</p>
+    </a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="eyebrow">Contact</div>
+  <h2>Let's connect</h2>
+  <form class="contact" id="contactForm">
+    <input id="cName" placeholder="Your name" required>
+    <input id="cEmail" type="email" placeholder="Your email" required>
+    <textarea id="cMsg" rows="5" placeholder="Your message" required></textarea>
+    <button class="btn primary" type="submit">Send message</button>
+  </form>
+</section>
+
+<footer>© <span id="year"></span> Uva Sri · Made with curiosity ✦</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // Highlight nav link while scrolling
+  const links = document.querySelectorAll("nav a");
+  const secs = [...links].map(a => document.querySelector(a.getAttribute("href")));
+  window.addEventListener("scroll", () => {
+    let i = secs.findIndex((s, idx) => {
+      const next = secs[idx + 1];
+      return s.getBoundingClientRect().top <= 120 && (!next || next.getBoundingClientRect().top > 120);
+    });
+    links.forEach(l => l.classList.remove("active"));
+    if (i >= 0) links[i].classList.add("active");
+  });
+
+  // Contact form opens the visitor's email app (replace the address below)
+  document.getElementById("contactForm").addEventListener("submit", e => {
+    e.preventDefault();
+    const n = cName.value, m = cMsg.value, em = cEmail.value;
+    location.href = `mailto:your-email@example.com?subject=Portfolio message from ${encodeURIComponent(n)}&body=${encodeURIComponent(m + "\n\nFrom: " + em)}`;
+  });
+</script>
+</body>
+</html>
